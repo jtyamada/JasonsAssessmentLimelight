@@ -43,7 +43,7 @@ export default function transform(response: Response, request: Request) {
     })
 
     // PDP
-
+    
 
 
     response.body = $.html()

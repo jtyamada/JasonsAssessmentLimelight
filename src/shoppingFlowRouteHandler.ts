@@ -1,5 +1,4 @@
 import { CACHE_PAGES } from './cache'
-import { CACHE_ASSETS } from './cache'
 import { RouteHandler } from '@layer0/core/router/Router'
 import transform from './transform'
 

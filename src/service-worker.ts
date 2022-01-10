@@ -1,7 +1,10 @@
 import { skipWaiting, clientsClaim } from 'workbox-core'
 import { Prefetcher, prefetch } from '@layer0/prefetch/sw'
 import DeepFetchPlugin, { DeepFetchCallbackParam } from '@layer0/prefetch/sw/DeepFetchPlugin'
+import install from '@layer0/prefetch/window/install'
+import { prefetch } from '@layer0/prefetch/window'
 
+install()
 skipWaiting()
 clientsClaim()
 
@@ -25,6 +28,13 @@ new Prefetcher({
       {
         selector: 'img.product-tile-image.position-relative',
         maxMatches: 2,
+        attribute: 'src',
+        as: 'image',
+        callback: deepFetchPLPImagesTwo,
+      },
+            {
+        selector: 'img.pdp-carousel-image',
+        maxMatches: 1,
         attribute: 'src',
         as: 'image',
         callback: deepFetchPLPImagesTwo,
@@ -57,7 +67,11 @@ function deepFetchPLPImagesTwo({ $el, el, $ }: DeepFetchCallbackParam) {
   prefetch(url, 'image')
 }
 
-
+function deepFetchPDPImages({ $el, el, $ }: DeepFetchCallbackParam) {
+  const url = $el.attr('src')
+  console.log("[][]][][[][]][][][][][[]][[][][]\nPrefetching PDP: "+url+"\n")
+  prefetch(url, 'image')
+}
 
 // function logPrefetchedContent({$el}) { // for testing
 //   // console.log("[][]][][[][]][][][][][[]][[][][]")
