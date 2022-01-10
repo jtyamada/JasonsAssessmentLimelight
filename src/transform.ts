@@ -43,8 +43,12 @@ export default function transform(response: Response, request: Request) {
     })
 
     // PDP
-    
-
+    $('pdp-carousel-imaged img-fluid').map((i, el) => {
+      const dataSrc = $(el).attr('data-src') || "";
+      const newUrl = dataSrc?.replace('https://www.lushusa.com/', '/')
+      $(el).attr('src', newUrl)
+           .attr('data-src', newUrl)
+    })
 
     response.body = $.html()
   }
