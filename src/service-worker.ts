@@ -32,12 +32,13 @@ new Prefetcher({
         as: 'image',
         callback: deepFetchPLPImagesTwo,
       },
-            {
+      // Addded this for deep fetching PDP Images
+      {
         selector: 'img.pdp-carousel-image',
         maxMatches: 1,
         attribute: 'src',
         as: 'image',
-        callback: deepFetchPLPImagesTwo,
+        callback: deepFetchPDPImages,
       },
     ]),
   ],
