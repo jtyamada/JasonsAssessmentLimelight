@@ -3,7 +3,7 @@
 https://jason-yamada-www-lushusa-com-default.layer0-limelight.link/home
 
 ### What you intended to accomplish in this assessment:
-I wanted to accomplish a better understanding of the Layer0 tool and how to utilize edge caching to increase and improve website load performance. I added the PLP and PDP pages to Layer0 as well as applied pre-fetch to the static images and deep fetch to the PDP images. This was done in an effort to get the site closer to instant page loads. My main priority was to work on reducing the LCP for the PDPs.
+I wanted to accomplish a better understanding of the Layer0 tool and how to utilize edge caching to increase and improve website load performance but my main priority was to work on reducing the LCP for the PDPs.. I added the PLP and PDP pages to Layer0 as well as applied pre-fetch to the static images and deep fetch to the PDP images. This was done in an effort to get the site closer to instant page loads.
 
 ### What you’d do as next steps if you had more time:
 With more time, I would want to tweak the way certain assets are loaded and better target assets to cache based on logical customer flows and progressions. Add prerender to the PLP and home PDP pages and include a more extensive deep fetch for the PLP images.
