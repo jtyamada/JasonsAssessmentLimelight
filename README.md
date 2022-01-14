@@ -12,8 +12,10 @@ With more time, I would want to tweak the way certain assets are loaded and bett
 The tool is extremely powerful and at a surface level is easy to understand, but I can see where a website could be tweaked to the point of being able to load in an instant no matter where you are, using the edge caching. I do wish more could be done within the Layer0 website. Maybe running a script a page test from within Layer0 to allow for faster feedback between changes.
 
 ### Part 2
-www.lushusa.com without Layer0
+without Layer0
+www.lushusa.com
 https://www.webpagetest.org/result/220113_AiDcDA_820aeb4ab746f6ffb93a0875c3dce58d/
 
-https://jason-yamada-www-lushusa-com-default.layer0-limelight.link/home with Layer0
+with Layer0
+https://jason-yamada-www-lushusa-com-default.layer0-limelight.link/home
 https://www.webpagetest.org/result/220113_BiDcE9_e5bb6c3ee1aca5f24ddea79efa8dd876/
