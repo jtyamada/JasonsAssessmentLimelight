@@ -46,7 +46,7 @@ Added PDP to Layer0 routes.ts:
   .match('/body/:path.html', shoppingFlowRouteHandler)
 ```
 
-Static images added to routes.ts
+Static images added to routes.ts:
 ```
     // All Images in /dw/image/v2
   .match('/dw/image/v2/:path.jpg', ({ cache, proxy }) => {
