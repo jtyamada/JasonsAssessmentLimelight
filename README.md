@@ -5,8 +5,9 @@ https://jason-yamada-www-lushusa-com-default.layer0-limelight.link/home
 ### What you intended to accomplish in this assessment:
 I wanted to accomplish a better understanding of the Layer0 tool and how to utilize edge caching to increase and improve website load performance but my main priority was to work on reducing the LCP for the PDPs.. I added the PLP and PDP pages to Layer0 as well as applied pre-fetch to the static images and deep fetch to the PDP images. This was done in an effort to get the site closer to instant page loads.
 
+
+######Added PLP to Layer0 routes.ts:
 ```
-Added PLP to Layer0 routes.ts:
   // PLP pages
   .match('/bath/:path*', shoppingFlowRouteHandler)
   .match('/gifts/:path*', shoppingFlowRouteHandler)
@@ -25,8 +26,9 @@ Added PLP to Layer0 routes.ts:
   .match('/stories/:path*', shoppingFlowRouteHandler)
 ```
 
+
+######Added PDP to Layer0 routes.ts:
 ```
-Added PDP to Layer0 routes.ts: 
     // PDP pages
   .match('/bath/:path.html', shoppingFlowRouteHandler)
   .match('/gifts/:path.html', shoppingFlowRouteHandler)
@@ -44,8 +46,8 @@ Added PDP to Layer0 routes.ts:
   .match('/body/:path.html', shoppingFlowRouteHandler)
 ```
 
+######Static images added to routes.ts
 ```
-  Static images added to routes.ts
     // All Images in /dw/image/v2
   .match('/dw/image/v2/:path.jpg', ({ cache, proxy }) => {
     cache(CACHE_ASSETS)
@@ -53,8 +55,9 @@ Added PDP to Layer0 routes.ts:
   })
 ```
 
+
+######Deep prefetch of PDP images in the service-worker.ts:
 ```
-Deep prefetch of PDP images in the service-worker.ts:
   function deepFetchPDPImages({ $el, el, $ }: DeepFetchCallbackParam) {
     const url = $el.attr('src')
     console.log("[][]][][[][]][][][][][[]][[][][]\nPrefetching PDP: "+url+"\n")
@@ -62,8 +65,9 @@ Deep prefetch of PDP images in the service-worker.ts:
   }
 ```
 
+
+######Revitalized PDP image sources:
 ```
-Revitalized PDP image sources:
     // PDP
     $('pdp-carousel-imaged img-fluid').map((i, el) => {
       const dataSrc = $(el).attr('data-src') || "";
