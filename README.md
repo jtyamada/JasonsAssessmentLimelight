@@ -5,6 +5,7 @@ https://jason-yamada-www-lushusa-com-default.layer0-limelight.link/home
 ### What you intended to accomplish in this assessment:
 I wanted to accomplish a better understanding of the Layer0 tool and how to utilize edge caching to increase and improve website load performance but my main priority was to work on reducing the LCP for the PDPs.. I added the PLP and PDP pages to Layer0 as well as applied pre-fetch to the static images and deep fetch to the PDP images. This was done in an effort to get the site closer to instant page loads.
 
+```
 Added PLP to Layer0 routes.ts:
   // PLP pages
   .match('/bath/:path*', shoppingFlowRouteHandler)
@@ -22,7 +23,9 @@ Added PLP to Layer0 routes.ts:
   .match('/by-occasion/:path*', shoppingFlowRouteHandler)
   .match('/shop-by-price/:path*', shoppingFlowRouteHandler)
   .match('/stories/:path*', shoppingFlowRouteHandler)
+```
 
+```
 Added PDP to Layer0 routes.ts: 
     // PDP pages
   .match('/bath/:path.html', shoppingFlowRouteHandler)
@@ -39,21 +42,27 @@ Added PDP to Layer0 routes.ts:
   .match('/by-occasion/:path.html', shoppingFlowRouteHandler)
   .match('/shop-by-price/:path*', shoppingFlowRouteHandler)
   .match('/body/:path.html', shoppingFlowRouteHandler)
-  
+```
+
+```
   Static images added to routes.ts
     // All Images in /dw/image/v2
   .match('/dw/image/v2/:path.jpg', ({ cache, proxy }) => {
     cache(CACHE_ASSETS)
     return proxy('origin')
   })
+```
 
+```
 Deep prefetch of PDP images in the service-worker.ts:
   function deepFetchPDPImages({ $el, el, $ }: DeepFetchCallbackParam) {
     const url = $el.attr('src')
     console.log("[][]][][[][]][][][][][[]][[][][]\nPrefetching PDP: "+url+"\n")
     prefetch(url, 'image')
   }
+```
 
+```
 Revitalized PDP image sources:
     // PDP
     $('pdp-carousel-imaged img-fluid').map((i, el) => {
@@ -62,7 +71,7 @@ Revitalized PDP image sources:
       $(el).attr('src', newUrl)
            .attr('data-src', newUrl)
     })
-    
+```  
 
 ### What you’d do as next steps if you had more time:
 With more time, I would want to tweak the way certain assets are loaded and better target assets to cache based on logical customer flows and progressions. Add prerender to the PLP and home PDP pages and include a more extensive deep fetch for the PLP images.
