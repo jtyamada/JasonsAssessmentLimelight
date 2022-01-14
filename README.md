@@ -13,9 +13,13 @@ The tool is extremely powerful and at a surface level is easy to understand, but
 
 ### Part 2
 without Layer0
+
 www.lushusa.com
+
 https://www.webpagetest.org/result/220113_AiDcDA_820aeb4ab746f6ffb93a0875c3dce58d/
 
 with Layer0
+
 https://jason-yamada-www-lushusa-com-default.layer0-limelight.link/home
+
 https://www.webpagetest.org/result/220113_BiDcE9_e5bb6c3ee1aca5f24ddea79efa8dd876/
